@@ -1,0 +1,198 @@
+/* ====================== */
+/* === INFO BOX COMPONENTS === */
+/* ====================== */
+
+/* Container for info boxes */
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Info Box with gradient background */
+.info-box {
+    min-width: 300px;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--box-gradient-light), var(--box-gradient-dark));
+    box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.1);
+    text-align: center;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Info box hover effect overlay */
+.info-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.05);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* Hover state */
+.info-box:hover::before {
+    opacity: 1;
+}
+
+.info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 25px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, rgba(50, 50, 50, 0.95), rgba(5, 5, 5, 0.85));
+}
+
+/* Title styling */
+.info-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+/* Animated underline effect */
+.info-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 10px auto;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Expand underline on hover */
+.info-box:hover .info-title::after {
+    width: 80px;
+}
+
+/* Text styling */
+.info-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--light-text);
+    opacity: 1;
+    z-index: 2;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Read more button container */
+.read-more-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -4.375rem;
+    padding-left: 16.8%;
+    z-index: var(--layer-middle);
+    padding-bottom: 1rem;
+}
+
+/* ====================== */
+/* === RESPONSIVE COMPONENTS === */
+/* ====================== */
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .info-container {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .info-box {
+        min-width: 300px;
+        max-width: 400px;
+        padding: 30px;
+    }
+    
+    .info-title {
+        font-size: 2rem;
+    }
+    
+    .info-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .info-container {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    
+    .info-box {
+        min-width: 280px;
+        max-width: 45%;
+        padding: 25px;
+    }
+    
+    .info-title {
+        font-size: 1.8rem;
+    }
+    
+    .info-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    .info-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .info-box {
+        min-width: auto;
+        max-width: 90%;
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .info-title {
+        font-size: 1.6rem;
+    }
+    
+    .info-text {
+        font-size: 1rem;
+    }
+    
+    .read-more-wrapper {
+        justify-content: center;
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Small phones (up to 413px) */
+@media (max-width: 413px) {
+    .info-box {
+        padding: 15px;
+    }
+    
+    .info-title {
+        font-size: 1.4rem;
+    }
+    
+    .info-text {
+        font-size: 0.95rem;
+    }
+}

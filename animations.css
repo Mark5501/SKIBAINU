@@ -1,0 +1,120 @@
+/* ====================== */
+/* === ANIMATIONS === */
+/* ====================== */
+
+/* Neon glow effect */
+.neon-glow {
+    position: absolute;
+    width: 100vw;
+    height: 2px;
+    background-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5);
+    animation: neon-glow-animation 2s ease-in-out;
+    opacity: 0;
+    z-index: 2;
+    left: 0;
+}
+
+/* Keyframe animations */
+@keyframes neon-glow-animation {
+    0% {
+        opacity: 0.3;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes spotlight {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes spark-animation {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* Spark Effect */
+.spark {
+    position: absolute;
+    width: 0.625rem;
+    height: 0.625rem;
+    background: radial-gradient(circle, rgb(96, 144, 221) 20%, rgba(250, 232, 67, 0.1) 80%);
+    filter: blur(0.1875rem);
+    animation: spark-animation 0.5s linear;
+}
+
+/* ====================== */
+/* === TRANSITIONS === */
+/* ====================== */
+
+/* Element transitions */
+.right-logo {
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+#loading-screen {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#loading-progress {
+    transition: width 0.3s ease-out;
+}
+
+#thief-icon {
+    transition: left 0.3s ease-in-out;
+}
+
+/* ====================== */
+/* === RESPONSIVE ANIMATIONS === */
+/* ====================== */
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .neon-glow {
+        height: 2px;
+    }
+    
+    #loading-screen::before {
+        animation-duration: 5s;
+    }
+}
+
+/* Tablets and below (up to 1024px) */
+@media (max-width: 1024px) {
+    /* Animation performance optimization for mobile devices */
+    .grid-line, .neon-glow {
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+    
+    #loading-screen::before {
+        animation-duration: 8s; /* Slow down animation on mobile for better performance */
+    }
+    
+    .neon-glow {
+        height: 1.5px;
+    }
+}
+
+/* Mobile phones (up to 767px) */
+@media (max-width: 767px) {
+    /* Further reduce animation complexity on mobile */
+    .neon-glow {
+        height: 1px;
+        box-shadow: 0 0 8px 1px rgba(255, 215, 0, 0.4);
+    }
+    
+    .spark {
+        width: 0.5rem;
+        height: 0.5rem;
+        filter: blur(0.15rem);
+    }
+}

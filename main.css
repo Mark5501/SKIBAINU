@@ -1,0 +1,9 @@
+/* Import all CSS files in the correct order */
+@import 'base.css';
+@import 'layout.css';
+@import 'navbar.css';
+@import 'loadingScreen.css';
+@import 'animations.css';
+@import 'hero.css';
+@import 'components.css';
+@import 'buttons.css'; 

@@ -1,0 +1,171 @@
+/* ====================== */
+/* === LAYOUT STYLES === */
+/* ====================== */
+
+/* ====================== */
+/* === GRID SYSTEM === */
+/* ====================== */
+
+/* Grid container */
+.grid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: var(--layer-grid);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Grid lines */
+.grid-line {
+    position: absolute;
+    background-color: var(--grid-line-color);
+    z-index: 1;
+}
+
+.grid-line.horizontal {
+    width: 100vw;
+    height: 1px;
+    left: 0;
+}
+
+.grid-line.vertical {
+    width: 1px;
+    height: 100vh;
+    top: 0;
+}
+
+/* ====================== */
+/* === SECTION LAYOUTS === */
+/* ====================== */
+
+/* Info Section */
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 80px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    position: relative;
+    z-index: var(--layer-middle);
+    margin-top: 100px;
+    border-top: none;
+}
+
+/* Divider - Barb wire (update to be behind navbar) */
+.divider {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    z-index: 50; /* DECREASED z-index to be lower than navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.divider img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: inherit; /* Inherit the parent's z-index */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* ====================== */
+/* === RESPONSIVE LAYOUTS === */
+/* ====================== */
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    /* Grid system on desktop */
+    .grid-line.horizontal:nth-child(n+1):nth-child(-n+11) {
+        top: calc((100vh / 10) * (var(--i) - 1));
+    }
+    
+    .grid-line.vertical:nth-child(n+12):nth-child(-n+22) {
+        left: calc((100vw / 10) * (var(--i) - 11));
+    }
+    
+    /* Info section on desktop */
+    .info-section {
+        padding: 100px 40px;
+        margin-top: 80px;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Grid system on tablet */
+    .grid-line.horizontal:nth-child(n+1):nth-child(-n+9) {
+        top: calc((100vh / 8) * (var(--i) - 1));
+    }
+    
+    .grid-line.vertical:nth-child(n+10):nth-child(-n+18) {
+        left: calc((100vw / 8) * (var(--i) - 9));
+    }
+    
+    /* Info section on tablet */
+    .info-section {
+        padding: 90px 30px;
+        margin-top: 120px;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    /* Grid system on mobile - reduce density */
+    .grid-line.horizontal:nth-child(n+1):nth-child(-n+7) {
+        top: calc((100vh / 6) * (var(--i) - 1));
+    }
+    
+    .grid-line.vertical:nth-child(n+8):nth-child(-n+14) {
+        left: calc((100vw / 6) * (var(--i) - 7));
+    }
+    
+    /* Skip every other line to reduce visual noise */
+    .grid-line.horizontal:nth-child(even),
+    .grid-line.vertical:nth-child(odd) {
+        opacity: 0.5;
+    }
+    
+    /* Info section on mobile */
+    .info-section {
+        padding: 70px 20px;
+        margin-top: 100px;
+        min-height: 80vh;
+    }
+}
+
+/* Small phones (up to 413px) */
+@media (max-width: 414px) {
+    /* Further reduce grid density */
+    .grid-line.horizontal:nth-child(odd),
+    .grid-line.vertical:nth-child(odd) {
+        display: none;
+    }
+    
+    /* Info section on small phones */
+    .info-section {
+        padding: 60px 15px;
+        margin-top: 50px;
+        min-height: 75vh;
+    }
+}
+
+/* Very small phones (up to 374px) */
+@media (max-width: 374px) {
+    .info-section {
+        padding: 50px 10px;
+        margin-top: 70px;
+        min-height: 70vh;
+    }
+}

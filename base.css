@@ -1,0 +1,258 @@
+/* ==================== */
+/* === CSS RESET ===== */
+/* ================== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Bangers', cursive;
+    font-size: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================= */
+/* === CUSTOM PROPERTIES === */
+/* ========================= */
+
+:root {
+    /* Color palette */
+    --primary-color: #ffcc00;
+    --primary-hover: #e6b800;
+    --dark-bg: #000000;
+    --dark-bg-transparent: rgba(0, 0, 0, 0.9);
+    --dark-overlay: rgba(0, 0, 0, 0.75);
+    --light-text: #ffffff;
+    --secondary-text: #cccccc;
+    --accent-glow: rgba(255, 215, 0, 0.3);
+    --box-gradient-dark: rgba(0, 0, 0, 0.8);
+    --box-gradient-light: rgba(45, 45, 45, 0.9);
+    --grid-line-color: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.1);
+    
+    /* Z-index layers */
+    --layer-base: 1;
+    --layer-grid: 1;
+    --layer-middle: 5;
+    --layer-top: 10;
+    --layer-overlay: 50;
+    --layer-modal: 100;
+    --layer-loading: 1000;
+}
+
+/* ======================== */
+/* === BASE STYLES === */
+/* ======================= */
+
+html {
+    font-size: 16px; /* Base font size for rem calculations */
+    scroll-behavior: smooth;
+    background-color: black;
+}
+
+body {
+    color: var(--light-text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main content area */
+#content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200vh;
+    padding-top: 5rem;
+    background-color: transparent;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* ====================== */
+/* === UTILITY CLASSES === */
+/* ====================== */
+
+.text-center {
+    text-align: center;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* =============================== */
+/* === RESPONSIVE VISIBILITY === */
+/* ============================= */
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+/* ====================== */
+/* === BROWSER STYLES === */
+/* ====================== */
+
+/* Selection styling */
+::selection {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    text-shadow: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+/* Only allow main body scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: block;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* Hide scrollbars for specific elements */
+#content::-webkit-scrollbar,
+.hero::-webkit-scrollbar,
+.info-section::-webkit-scrollbar,
+.info-container::-webkit-scrollbar,
+.rectangle-frame::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+/* Element overflow handling */
+.hero {
+    overflow: visible;
+}
+
+.info-section {
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.info-container {
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.rectangle-frame {
+    overflow: hidden;
+}
+
+/* ============================== */
+/* === RESPONSIVE BASE SIZES === */
+/* ============================ */
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .desktop-only {
+        display: block;
+    }
+    
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+/* Large phones (414px - 767px) */
+@media (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Small phones (up to 413px) */
+@media (max-width: 413px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+/* iOS Safe Area Handling */
+@supports (padding-top: env(safe-area-inset-top)) {
+    header {
+        padding-top: calc(0.625rem + env(safe-area-inset-top));
+    }
+    
+    #loading-screen {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}

@@ -1,0 +1,191 @@
+/* ====================== */
+/* === LOADING SCREEN === */
+/* ====================== */
+
+/* Main loading screen container */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./Assets/Images/loading_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--layer-loading);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Hidden state */
+#loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loading text */
+#loading-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-shadow: 0.125rem 0.125rem 0.25rem #000000;
+    margin-bottom: 1rem;
+    font-family: 'Bangers', cursive;
+}
+
+/* Loading bar container */
+#loading-bar {
+    width: 70%;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    overflow: visible; /* Critical - allows thief to be visible */
+    position: relative; /* Important for absolute positioning child */
+    box-shadow: 0 0 0.75rem rgba(255, 255, 255, 0.2);
+    border: 0.125rem solid var(--primary-color);
+    margin-top: 2rem;
+}
+
+/* Loading progress indicator */
+#loading-progress {
+    height: 100%;
+    width: 0%; /* Initial width */
+    background: linear-gradient(to right, #1e1e1e, #444, #1e1e1e);
+    border-radius: 1.25rem;
+    transition: width 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); /* Smoother easing */
+    position: relative;
+}
+
+/* Thief icon */
+#thief-icon {
+    position: absolute; /* Position absolutely within the loading bar */
+    top: 50%; /* Center vertically */
+    left: 0; /* Start at the left */
+    width: 5rem;
+    height: 5rem;
+    background-image: url('./Assets/Images/shiba_thief_icon.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(-50%); /* Center vertically */
+    transition: left 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); /* Exactly match progress transition */
+    z-index: 100; /* Ensure it's on top */
+    pointer-events: none;
+    will-change: transform, left; /* Performance optimization */
+}
+
+/* Loading screen spotlight effect */
+#loading-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.2) 10%, rgba(0, 0, 0, 0) 80%);
+    animation: spotlight 5s infinite linear alternate;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* ====================== */
+/* === RESPONSIVE LOADING === */
+/* ====================== */
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    #loading-text {
+        font-size: 2rem;
+    }
+    
+    #loading-bar {
+        width: 50%;
+        height: 2.5rem;
+        max-width: 800px;
+    }
+    
+    #thief-icon {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #loading-text {
+        font-size: 1.8rem;
+    }
+    
+    #loading-bar {
+        width: 60%;
+        height: 2.2rem;
+    }
+    
+    #thief-icon {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    #loading-text {
+        font-size: 1.5rem;
+    }
+    
+    #loading-bar {
+        width: 75%;
+        height: 2rem;
+    }
+    
+    #thief-icon {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+/* Small phones (up to 413px) */
+@media (max-width: 413px) {
+    #loading-text {
+        font-size: 1.3rem;
+    }
+    
+    #loading-bar {
+        width: 80%;
+        height: 1.8rem;
+    }
+    
+    #thief-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+/* Very small phones (up to 374px) */
+@media (max-width: 374px) {
+    #loading-text {
+        font-size: 1.2rem;
+    }
+    
+    #loading-bar {
+        width: 85%;
+        height: 1.6rem;
+    }
+    
+    #thief-icon {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+/* iOS Safe Area Handling */
+@supports (padding-top: env(safe-area-inset-top)) {
+    #loading-screen {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}

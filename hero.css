@@ -1,0 +1,293 @@
+/* ====================== */
+/* === HERO SECTION === */
+/* ====================== */
+
+/* Main hero container */
+.hero {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Rectangle frame background */
+.rectangle-frame {
+    position: absolute;
+    width: 100%;
+    max-width: 90rem;
+    height: 31.25rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    margin: -3.125rem;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====================== */
+/* === LOGO STYLING === */
+/* ====================== */
+
+/* Right logo container */
+.right-logo {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 8;
+    width: 60%;
+    max-width: 900px;
+}
+
+/* Show logo with animation */
+.right-logo.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Logo image */
+.right-logo img {
+    width: clamp(150px, 40vw, 340px);
+    height: auto;
+    margin-bottom: 3rem;
+    display: block;
+}
+
+/* Logo text */
+.logo-text {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+/* ====================== */
+/* === DIVIDER STYLING === */
+/* ====================== */
+
+.divider {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+}
+
+.divider img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================= */
+/* === RESPONSIVE DESIGN === */
+/* ========================= */
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .hero {
+        height: 100vh;
+    }
+    
+    .rectangle-frame {
+        height: 31.25rem;
+    }
+    
+    .divider {
+        top: 50rem;
+    }
+    
+    .right-logo {
+        top: 65%;
+        width: 65%;
+        max-width: 900px;
+    }
+    
+    .right-logo img {
+        width: clamp(150px, 40vw, 340px);
+        margin-bottom: 2rem;
+    }
+    
+    .logo-text {
+        font-size: clamp(1.8rem, 6vw, 3rem);
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        height: 90vh;
+    }
+    
+    .rectangle-frame {
+        height: 25rem;
+    }
+    
+    .divider {
+        top: 40rem;
+    }
+    
+    .right-logo {
+        width: 70%;
+        max-width: 700px;
+        top: 45%;
+    }
+    
+    .right-logo img {
+        width: clamp(120px, 25vw, 180px);
+        margin-bottom: 1.5rem;
+    }
+    
+    .logo-text {
+        font-size: clamp(1.3rem, 4vw, 2rem);
+        margin-bottom: 1rem;
+    }
+}
+
+/* Large Phones Styles */
+@media (min-width: 414px) and (max-width: 767px) {
+    .hero {
+        height: 80vh;
+    }
+    
+    .rectangle-frame {
+        height: 20rem;
+    }
+    
+    .divider {
+        top: 40rem;
+    }
+    
+    .right-logo {
+        top: 36%;
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .right-logo img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 0rem;
+    }
+    
+    .logo-text {
+        font-size: clamp(1.5rem, 5.8vw, 2rem);
+        margin-bottom: 0rem;
+    }
+}
+
+/* Small Phones Styles */
+@media (max-width: 413px) {
+    .hero {
+        height: 70vh;
+    }
+    
+    .rectangle-frame {
+        height: 18rem;
+    }
+    
+    .divider {
+        top: 22rem;
+    }
+    
+    .right-logo {
+        top: 33%;
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .right-logo img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 0rem;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+    }
+}
+
+/* Very Small Phones Styles */
+@media (max-width: 374px) {
+    .right-logo {
+        top: 30%;
+    }
+    
+    .right-logo img {
+        width: 130px;
+    }
+    
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    .divider {
+        top: 20rem;
+    }
+}
+
+/* ============================= */
+/* === SPECIFIC DEVICE FIXES === */
+/* ============================= */
+
+/* Dynamic adjustments for shorter screens */
+@media (max-height: 700px) and (max-width: 767px) {
+    .right-logo {
+        top: 43%;
+    }
+    
+    .divider {
+        top: 18rem;
+    }
+}
+
+/* iPhone XR (414px × 896px) */
+@media (min-width: 413px) and (max-width: 415px) and (min-height: 890px) and (max-height: 900px) {
+    .divider {
+        top: 22rem;
+    }
+}
+
+/* iPhone 12 Pro (390px × 844px) */
+@media (min-width: 389px) and (max-width: 391px) and (min-height: 840px) and (max-height: 850px) {
+    .right-logo {
+        top: 40%;
+    }
+    
+    .logo-text {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* iPhone 14 Pro Max (428px × 926px) */
+@media (min-width: 426px) and (max-width: 430px) and (min-height: 920px) and (max-height: 930px) {
+    .divider {
+        top: 24rem;
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Shiba Heist</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div id="loading-text">0% Loading...</div>
+        <div id="loading-bar">
+            <div id="loading-progress"></div>
+            <div id="thief-icon"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="navbar">
+        <div class="navbar">
+            <div class="logo">
+                <img src="./Assets/Images/shiba_logo.png" alt="Shiba Heist Logo">
+                <span class="currency">$ SKIBA</span>
+            </div>
+            <div class="crypto-address">
+                <span id="crypto-text" class="crypto-text"></span>
+                <button id="copy-btn" class="copy-btn" aria-label="Copy address">
+                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="content">
+        <section class="hero">
+            <h1></h1>
+            <p></p>
+        </section>
+
+        <div class="rectangle-frame">
+            <div class="scrolling-image">
+                <img src="./Assets/Images/rec_background.png" alt="Scrolling Image">
+            </div>
+        </div>
+
+        <!-- Right Logo Section -->
+        <div class="right-logo">
+            <img src="./Assets/Images/shiba_logo.png" alt="Shiba Logo">
+            
+            <div class="logo-text">
+                <span>The most based Shiba on Base. Don't sleep on $SKIBA🚀</span>
+            </div>
+        
+            <div class="button-container">
+                <!-- Use <a> instead of <button> for links -->
+                <a href="https://app.uniswap.org/explore/tokens/base/0x80862b188466908dd150e9dbd5fa6a21205b075d" 
+                   class="btn uniswap-btn" target="_blank">
+                    BUY ON UNISWAP
+                    <img src="./Assets/Images/uniswap_logo.png" alt="Uniswap Icon" class="btn-icon">
+                </a>
+        
+                <a href="https://dexscreener.com/base/0x1ca0309e745b6e8b71f1db288ca3751004db61d5" class="btn chart-btn" target="_blank" >CHART</a>
+            </div>
+        </div>        
+
+       <!-- Barbed Wire Divider -->
+       <div class="divider">
+            <img src="./Assets/Images/barb.png" alt="Barbed Wire Divider">
+            <div class="electricity"></div>
+        </div>
+
+        <section class="info-section">
+            <!-- Wrap info boxes in their own container -->
+            <div class="info-container">
+                <div class="info-box">
+                    <h2 class="info-title">General Characteristics</h2>
+                    <p class="info-text">
+                        SKI MASK SHIBA INU ($SKIBA) is a dog-themed meme coin that describes itself as the most “based" Shiba on the layer-2 Base chain. It embodies stealth and power in the fast-paced meme coin realm.
+                    </p>
+                    <p class="info-text">
+                        The project is fully community-driven, with 100% transparency and a 15% token lock. Airdrops are distributed randomly to active participants, reinforcing the meme coin's community-focused nature.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <h2 class="info-title">Roadmap</h2>
+                    <p class="info-text">
+                        The Base Chain-based meme coin is still young and does not yet have a roadmap. However, it emphasizes reaching the moon, thus offering holders financial opportunities.
+                    </p>
+                    <p class="info-text">
+                        The project will seek to increase visibility through marketing campaigns, partnerships, and broader ecosystem integration.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <h2 class="info-title">Functionality and Utility</h2>
+                    <p class="info-text">
+                        $SKIBA functions primarily as a meme coin, focusing on its community and branding rather than offering direct utility. Its main appeal lies in its Shiba narrative, "based" identity, and active community rewards through airdrops.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New independent button container -->
+        <div class="read-more-wrapper">
+            <div class="read-more-container">
+                <a href="https://memecoinseason.net/p/ski-mask-shiba-inu" class="info-btn" target="_blank">READ MORE.</a>
+            </div>
+        </div>
+
+        <!-- This content will only appear on desktop -->
+        <div class="desktop-only">
+            
+        </div>
+
+    </main>
+    
+<script src="script.js"></script>
+</body>
+</html>
