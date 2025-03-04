@@ -22,7 +22,7 @@
 .rectangle-frame {
     position: absolute;
     width: 100%;
-    max-width: 90rem;
+    max-width: 1920px;
     height: 31.25rem;
     overflow: hidden;
     border-radius: 0.625rem;
