@@ -109,8 +109,56 @@
 /* === RESPONSIVE COMPONENTS === */
 /* ====================== */
 
-/* Desktop (1025px and above) */
-@media (min-width: 1025px) {
+/* Full HD (1920x1080) and larger */
+@media (min-width: 1920px) {
+    .info-container {
+        max-width: 1800px;
+        gap: 50px;
+        margin: 0 auto;
+    }
+    
+    .info-box {
+        min-width: 400px;
+        max-width: 550px;
+        padding: 40px;
+        border-radius: 20px;
+        border: 3px solid rgba(255, 215, 0, 0.5);
+        box-shadow: 0px 6px 30px rgba(255, 215, 0, 0.15);
+    }
+    
+    .info-box:hover {
+        transform: translateY(-15px);
+        box-shadow: 0px 10px 35px rgba(255, 215, 0, 0.5);
+    }
+    
+    .info-title {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .info-title::after {
+        width: 70px;
+        height: 4px;
+        margin: 15px auto;
+    }
+    
+    .info-box:hover .info-title::after {
+        width: 100px;
+    }
+    
+    .info-text {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .read-more-wrapper {
+        margin-top: -5.5rem;
+        padding-left: 18%;
+    }
+}
+
+/* Desktop (1025px - 1919px) */
+@media (min-width: 1025px) and (max-width: 1919px) {
     .info-container {
         flex-direction: row;
         gap: 30px;

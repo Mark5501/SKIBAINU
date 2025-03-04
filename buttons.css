@@ -29,7 +29,7 @@
     transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
     min-width: 120px;
-    height: 5rem; /* Increased from 2.5rem to 3rem */
+    height: 5rem;
     text-align: center;
     box-sizing: border-box;
 }
@@ -52,7 +52,6 @@
     background-color: #1a1c21;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
-
 
 /* Uniswap button icon */
 .uniswap-btn .btn-icon {
@@ -88,8 +87,8 @@
     border-radius: 0.8rem;
     transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
-    height: 3rem; /* Increased from 2.5rem to 3rem */
-    width: 15srem;
+    height: 3rem;
+    width: 15rem; /* Fixed typo: was 15srem */
 }
 
 /* Read More button hover */
@@ -103,6 +102,59 @@
 /* === RESPONSIVE BUTTONS === */
 /* ====================== */
 
+/* FULL HD (1920x1080) and larger screens */
+@media (min-width: 1920px) {
+    /* Button container for large screens */
+    .button-container {
+        max-width: 1600px;
+        width: 75%;
+        gap: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    
+    /* Larger buttons for 1920x1080 */
+    .btn {
+        min-width: 160px;
+        height: 6rem;
+        padding: 0.7rem 1.8rem;
+        font-size: 1.1rem;
+        border-radius: 1rem;
+    }
+    
+    /* Enhanced hover effect */
+    .btn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Larger Uniswap button icon */
+    .uniswap-btn .btn-icon {
+        width: 4rem;
+        height: 4rem;
+        margin-top: 2.2rem;
+    }
+    
+    /* Adjusted Read More wrapper */
+    .read-more-wrapper {
+        margin-top: -6rem;
+        padding-left: 10%;
+    }
+    
+    /* Larger Read More button */
+    .info-btn {
+        height: 4rem;
+        width: 20rem;
+        font-size: 1.3rem;
+        padding: 1rem 2rem;
+    }
+    
+    /* Enhanced Read More hover */
+    .info-btn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+    }
+}
+
 /* TABLET (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     /* Button styles for tablet */
@@ -113,7 +165,7 @@
     
     .btn {
         min-width: 130px;
-        height: 3.2rem; /* Increased from 2.5rem to 3.2rem for tablet */
+        height: 3.2rem;
     }
     
     /* Read more button on tablet */
@@ -140,7 +192,7 @@
     
     .btn {
         width: 100%;
-        min-height: 5rem; /* Increased from 3rem to 3.2rem */
+        min-height: 5rem;
         font-size: 1.1rem;
     }
     
@@ -170,7 +222,7 @@
     
     .btn {
         width: 100%;
-        min-height: 3rem; /* Keep at 3rem */
+        min-height: 3rem;
         font-size: 1rem;
     }
     
@@ -192,7 +244,7 @@
 /* VERY SMALL PHONES (up to 374px) */
 @media (max-width: 374px) {
     .btn {
-        min-height: 3rem; /* Increased from 2.8rem to 3rem */
+        min-height: 3rem;
         font-size: 0.95rem;
     }
     

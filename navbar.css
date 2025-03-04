@@ -157,8 +157,72 @@ header {
 /* === RESPONSIVE NAVBAR === */
 /* ====================== */
 
-/* Desktop (1025px and above) */
-@media (min-width: 1025px) {
+/* Full HD (1920x1080) and larger screens */
+@media (min-width: 1920px) {
+    header {
+        height: 6rem;
+        padding: 0.75rem 2rem;
+        border-bottom: 0.0625rem solid rgba(255, 204, 0, 0.3);
+    }
+    
+    .navbar {
+        max-width: 110rem; /* Increased from 87.5rem */
+    }
+    
+    .logo {
+        gap: 0.5rem;
+    }
+    
+    .logo img {
+        height: 5.5rem;
+    }
+    
+    .currency {
+        font-size: 1.5rem;
+        letter-spacing: 0.05rem;
+        text-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+    }
+    
+    .crypto-address {
+        padding: 0.75rem 1.25rem;
+        font-size: 1.125rem;
+        border-radius: 0.75rem;
+        gap: 1rem;
+        border: 2px solid rgba(255, 204, 0, 0.25);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .crypto-address:hover {
+        background: rgba(40, 40, 40, 0.75);
+        border-color: rgba(255, 204, 0, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .crypto-text {
+        font-size: 1.125rem;
+    }
+    
+    .copy-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+    }
+    
+    .copy-icon, .check-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .copy-tooltip {
+        font-size: 14px;
+        padding: 6px 12px;
+        top: -36px;
+    }
+}
+
+/* Desktop (1025px - 1919px) */
+@media (min-width: 1025px) and (max-width: 1919px) {
     header {
         height: 5rem;
     }

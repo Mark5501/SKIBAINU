@@ -107,8 +107,50 @@
 /* === RESPONSIVE DESIGN === */
 /* ========================= */
 
+/* Full HD (1920x1080) and larger screens */
+@media (min-width: 1920px) {
+    .hero {
+        height: 100vh;
+    }
+    
+    .rectangle-frame {
+        max-width: 120rem; /* Increased from 90rem */
+        height: 38rem; /* Increased from 31.25rem */
+        border-radius: 0.875rem; /* Slightly larger border radius */
+        margin: -4rem; /* Increased margin */
+    }
+    
+    .divider {
+        top: 60rem; /* Adjusted for 1920x1080 screens */
+        max-width: 1920px; /* Ensure it doesn't stretch beyond screen */
+    }
+    
+    .right-logo {
+        top: 62%;
+        width: 65%;
+        max-width: 1200px; /* Increased from 900px */
+    }
+    
+    .right-logo img {
+        width: clamp(200px, 40vw, 400px); /* Increased size range */
+        margin-bottom: 3.5rem;
+    }
+    
+    .logo-text {
+        font-size: clamp(2.2rem, 6vw, 3.8rem); /* Increased size range */
+        margin-bottom: 2.5rem;
+        letter-spacing: 2px; /* Enhanced letter spacing */
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Enhanced text shadow */
+    }
+    
+    /* Adjust button container for this resolution */
+    .button-container {
+        margin-top: 2rem;
+    }
+}
+
 /* Desktop Styles */
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1919px) {
     .hero {
         height: 100vh;
     }
