@@ -114,10 +114,11 @@
     }
     
     .rectangle-frame {
-        max-width: 120rem; /* Increased from 90rem */
+        max-width: 1920px; /* Increased from 90rem */
         height: 38rem; /* Increased from 31.25rem */
         border-radius: 0.875rem; /* Slightly larger border radius */
         margin: -4rem; /* Increased margin */
+        width: 100%;
     }
     
     .divider {
